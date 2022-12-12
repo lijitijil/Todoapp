@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: todoapp-deployment
+
+  labels:
+
+    app: todoapp
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: todoapp
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: todoapp
+
+    spec:
+
+      containers:
+
+      - name: todoapp
+
+        image: lijitijil/todoapp:todoapp
+
+        ports:
+
+        - containerPort: 8002
